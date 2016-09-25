@@ -5,6 +5,31 @@ written in python. These are solely for educational purposes.
 
 ## Datastructures
 
+##### Average Scenario
+| Data Structure | Access | Search | Insertion | Deletion |
+| ---: | :---: | :---: | :---: | :---: |
+| [Array](#array) | `O(1)` | `O(n)` | `O(n)` | `O(n)` |
+| [Linked List](#llist) | `O(n)` | `O(n)` | `O(1)` | `O(1)` |
+| [BST](#bst) | `O(log(n))` | `O(log(n))` | `O(log(n))` | `O(log(n))` |
+| [Heap](#heap) | `O()` | `O()` | `O()` | `O()` |
+| [Hash Table](#hash) | `N/A` | `O(1)` | `O(1)` | `O(1)` |
+| [Stack](#stack) | `O(n)` | `O(n)` | `O(1)` | `O(1)` |
+| [Queue](#queue) | `O(n)` | `O(n)` | `O(1)` | `O(1)` |
+| [Trie](#trie) | `O()` | `O()` | `O()` | `O()` |
+| [Graph](#graph) | `O()` | `O()` | `O()` | `O()` |
+
+##### Worst Case Scenario
+| Data Structure | Access | Search | Insertion | Deletion |
+| ---: | :---: | :---: | :---: | :---: |
+| [Array](#array) | `O(1)` | `O(n)` | `O(n)` | `O(n)` |
+| [Linked List](#llist) | `O(n)` | `O(n)` | `O(1)` | `O(1)` |
+| [BST](#bst) | `O(n)` | `O(n)` | `O(n)` | `O(n)` |
+| [Heap](#heap) | `O()` | `O()` | `O()` | `O()` |
+| [Hash Table](#hash) | `N/A` | `O(n)` | `O(n)` | `O(n)` |
+| [Stack](#stack) | `O(n)` | `O(n)` | `O(1)` | `O(1)` |
+| [Queue](#queue) | `O(n)` | `O(n)` | `O(1)` | `O(1)` |
+| [Trie](#trie) | `O()` | `O()` | `O()` | `O()` |
+| [Graph](#graph) | `O()` | `O()` | `O()` | `O()` |
 
 ## Sorting
 These are just a few of many sorting algorithms - below you will find the algo and the space
