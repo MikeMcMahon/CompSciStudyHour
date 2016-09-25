@@ -15,7 +15,7 @@ and time complexity as well as the average case and worst case scenario run comp
 |                  | **Average**     | **Worst**       | **Worst**        |
 | [Radix](#radix)  | `O(nk)`       |`O(nk)`          |`O(n+k)`|
 | [Bucket](#bucket) | `O(nk)`       |`O(nk)`          |`O(n+k)`|
-| [Quick](#quick)  | `O(n log(n))` |`O(n^2)`         |`O(n+k)`|
+| [Quick](#quick)  | `O(n log(n))` |`O(n^2)`         |`O(log(n))`|
 | [Bubble](#bubble) | `O(n^2)`      |`O(n^2)`         |`O(1)`|
 | [Merge](#merge)  | `O(n log(n))` |`O(n log(n))`    |`O(n)`|
 
