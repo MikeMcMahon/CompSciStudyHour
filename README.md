@@ -5,7 +5,7 @@ written in python. These are solely for educational purposes.
 
 ## Datastructures
 
-##### Average Scenario
+#### Average Scenario
 | Data Structure | Access | Search | Insertion | Deletion |
 | ---: | :---: | :---: | :---: | :---: |
 | [Array](#array) | `O(1)` | `O(n)` | `O(n)` | `O(n)` |
@@ -18,7 +18,7 @@ written in python. These are solely for educational purposes.
 | [Trie](#trie) | `O()` | `O()` | `O()` | `O()` |
 | [Graph](#graph) | `O()` | `O()` | `O()` | `O()` |
 
-##### Worst Case Scenario
+#### Worst Case Scenario
 | Data Structure | Access | Search | Insertion | Deletion |
 | ---: | :---: | :---: | :---: | :---: |
 | [Array](#array) | `O(1)` | `O(n)` | `O(n)` | `O(n)` |
