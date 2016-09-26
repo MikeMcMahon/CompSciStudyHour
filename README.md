@@ -85,7 +85,7 @@ values greater than the pivot point into one bucket, and those that are less tha
 into another (though for values equal this distinction does not matter). 
 
 Quick sort works considerably slower against data sets with many duplicate values, as the pivot point
-does not account for this and those values may found themselves sorted against repeatedly (`O(n^2)`).
+does not account for duplicates.  Duplicate values may found themselves sorted against repeatedly (`O(n^2)`).
 To compensate for this one may use a "fat" or "wide" partition/pivot in which all values of a given pivot
 are stored and only those of lesser or greater stored into separate buckets. This solves the 'Dutch Flag Problem'
 
