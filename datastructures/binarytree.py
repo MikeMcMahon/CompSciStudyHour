@@ -1,6 +1,6 @@
-from typing import Tuple
-
-
+"""
+Mike McMahon
+"""
 class TreeLeaf(object):
     def __init__(self, weight: int, data: any=None):
         self.left = None
@@ -10,7 +10,6 @@ class TreeLeaf(object):
 
     def __str__(self):
         return self.data
-        #"{} {}".format(self.data if self.data else "_", self.weight)
 
     def __gt__(self, other):
         return self.weight > other.weight
