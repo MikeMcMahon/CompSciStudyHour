@@ -116,3 +116,10 @@ Using one vs the other depends greatly on the structure of the data stored in th
 Typically DFS is favored against shorter wider trees, where BFS is favored against taller narrower
 trees.  Additionally if memory is a concern the DFS search does not require a separate data structure
 to store the visited nodes when written recursively. 
+
+Consider a family tree, where we want to search for relatives - living relatives would be located
+near the bottom of the tree and located by a DFS much faster.  Whereas relatives long since passed
+would be located much higher in the tree and found with a BFS much faster.
+
+The point being, that it depends on the structure of the data and what you are searching for and 
+its place to be found within the tree. 

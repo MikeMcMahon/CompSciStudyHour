@@ -2,15 +2,11 @@
 MikeMcMahon - 9/24/2016
 
 A heap is a kind of binary tree in which elements are stored from max-down or
-min-down for any given node it's smallest child is located at its index * 2
-unless the next element is smaller than its amallest child
+min-down for any given node it's children may be located at its index * 2 (0) and (index * 2) + 1 (1)
 
---- PROS ---
-Fast wi
-
---- CONS ---
-
-
+We have prefixed our heaps with a [0] element to simplify the math required for locating children. Is this a good
+tradoff? Likely not, but in python it is absurdly easy and probably considered a slight abuse of the language, but
+damn...it looks good
 """
 
 
@@ -123,10 +119,10 @@ def main():
     heap = MinHeap()
 
     for i in raw_heap:
-        heap.insert(i)
+        heap.insert(i)  # O(n log n) time complexity with siftUp
 
     heap2 = MinHeap()
-    heap2.heapify(raw_heap)
+    heap2.heapify(raw_heap)  # O(n) complexity with siftDown
 
     heap3 = MaxHeap()
 
