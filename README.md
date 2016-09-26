@@ -60,9 +60,34 @@ and time complexity as well as the average case and worst case scenario run comp
 
 **<a name="radix"></a>Radix Sort**
 
+As the name implies, the Radix sort is a sorting algorithm that works with integers of a given base. 
+Given that the sort only works against integer values it is incredibly fast at sorting numbers with 
+an upper and lower bounds complexity time of `O(nk)` where `n` is the number of items to sort and `k`
+is passes required for the most significant digit. 
+
+Similar to how a bucket sort works, the radix sort uses buckets (queues) to process each individual 
+digit from 0..n where `n` is the base of the number being processed.  Each pass enqueus the numbers 
+into their respective bucket, with `k` number of passes required to completely sort the set.
+
 **<a name="bucket"></a>Bucket Sort**
 
+Similar to the radix sort a bucket sort uses "buckets" to divide the data into smaller and smaller
+groupings of data that can be sorted.  The partition, or pivot, is determined by the data and used
+to place all values greater than or less than the pivot into individualized buckets.  Each bucket
+may then be sorted by calling whatever sort routine is desired, or even calling the bucket sort again.
+This behavior would be considered analgous to calling a quick sort; however, the pivot point may not
+be desirable given the data causing a worst case sorting of `O(n^2)` time. 
+
 **<a name="quick"></a>Quick Sort**
+
+A powerful sorting algorithm that pivots the data based on a random pivot point or median, placing all
+values greater than the pivot point into one bucket, and those that are less than or equal to the pivot
+into another (though for values equal this distinction does not matter). 
+
+Quick sort works considerably slower against data sets with many duplicate values, as the pivot point
+does not account for this and those values may found themselves sorted against repeatedly (`O(n^2)`).
+To compensate for this one may use a "fat" or "wide" partition/pivot in which all values of a given pivot
+are stored and only those of lesser or greater stored into separate buckets. This solves the 'Dutch Flag Problem'
 
 **<a name="bubble"></a>Bubble Sort**
 
