@@ -32,6 +32,23 @@ written in python. These are solely for educational purposes.
 | [Graph](#graph) | `O()` | `O()` | `O()` | `O()` | `O(n)` |
 
 
+**<a name="array"></a>Array**
+
+An array is a contiguous block of memory that has been allocated to store a specific type of data. Arrays
+are allocated statically in languages like C/C++; however, resizing an array can be costly as a temporary
+array must be constructed to hold the values while the initial array is resized and reassigned.  
+
+**<a name="list"></a>Linked Lists**
+
+Similar to arrays LinkedLists store data in a contiguous manner; however, the memory is not allocated contiguously
+and the LinkedList stores a pointer to the next node.  The benefit is the reduced cost of resizing (as you 
+no longer have to do this); however, lookups are `O(n)` and no longer in constant time. Insertions to the end
+of a linked list are `O(n)` unless bookkeeping is done to keep track of the tail.  Otherwise insertions must
+be done at the root or head of the list to keep time constant. 
+
+DoublyLinked lists are similar to a Linked List as described above; however, each  node contains a pointer to
+the previous node.  This makes insertion at either end of the list a constant time of `O(1)`
+
 **<a name="trie"></a>Trie**
 
 A trie is a tree like data structure, in which the leafs for a given node fan out wide. 
