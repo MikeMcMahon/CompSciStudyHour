@@ -21,6 +21,9 @@ class LinkedList(object):
         def set_data(self, data):
             self._data = data
 
+        def get_data(self):
+            return self._data
+
         def __str__(self):
             return str(self._data)
 
@@ -39,8 +42,13 @@ class LinkedList(object):
                     self._tail = self._tail.get_next()
 
     def add(self, value):
-        self._tail.set_next(LinkedList.Node(value))
-        self._tail = self._tail.get_next()
+        if self._root is None:
+            self._root = LinkedList.Node(value)
+        else:
+            node = self.get(self._size)
+            node.set_next(LinkedList.Node(value))
+            self._tail = node.get_next()
+
         self._size += 1
 
     def __len__(self):
@@ -48,13 +56,13 @@ class LinkedList(object):
 
     def remove(self, i=None):
         """
-        Removes the element at a given position, if no position specified this will grab the tail (always O(1))
+        Removes the element at a given position, if no position
         :param i:
         :return:
         """
 
         if i:
-            if i > self._size:
+            if i > self._size or self._size == 0:
                 raise IndexError
 
             if i == 0:
@@ -62,12 +70,42 @@ class LinkedList(object):
 
             prev = None
             to_remove = self._root
-            for i in range(0, i):
+            for _ in range(0, i):
                 prev = to_remove
                 to_remove = to_remove.get_next()
 
             prev.set_next(prev.get_next().get_next())
             self._size -= 1
+        else:
+            self.remove(self._size)
+
+    def get(self, i) -> Node:
+        if i > self._size or self._size == 0:
+            raise IndexError
+
+        if i == 0:
+            return self._root
+
+        node = self._root
+        for _ in range(0, i):
+            node = node.get_next()
+
+        return node
+
+    def search(self, value):
+        """
+        Given the nature of linked list we're working with O(N) time here...
+        :param value:
+        :return:
+        """
+        node = self._root
+        for _ in range(0, i):
+            if node.get_data() == value:
+                return node
+
+            node = node.get_next()
+
+        raise ValueError("Value not found in linked list")
 
 
 def main():
