@@ -80,6 +80,11 @@ class LinkedList(object):
             self.remove(self._size)
 
     def get(self, i) -> Node:
+        """
+        O(N)
+        :param i:
+        :return:
+        """
         if i > self._size or self._size == 0:
             raise IndexError
 
@@ -99,7 +104,7 @@ class LinkedList(object):
         :return:
         """
         node = self._root
-        for _ in range(0, i):
+        for _ in range(0, self._size):
             if node.get_data() == value:
                 return node
 
@@ -107,13 +112,25 @@ class LinkedList(object):
 
         raise ValueError("Value not found in linked list")
 
+    def __str__(self):
+
+        node = self._root
+        str_rpr = "["
+        for _ in range(0, self._size):
+            str_rpr += str(node.get_data()) + ","
+            node = node.get_next()
+
+        return str_rpr[:-1] + "]"
+
 
 def main():
     arr = [1, 2, 3, 4, 5, 6, 7]
     llist = LinkedList(arr)
     print(len(llist))
+    print(llist)
     llist.remove(3)
     print(len(llist))
+    print(llist)
 
 if __name__ == "__main__":
     main()
