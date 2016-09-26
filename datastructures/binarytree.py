@@ -1,6 +1,8 @@
 """
 Mike McMahon
 """
+
+
 class TreeLeaf(object):
     def __init__(self, weight: int, data: any=None):
         self.left = None
