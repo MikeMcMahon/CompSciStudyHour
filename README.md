@@ -49,6 +49,17 @@ be done at the root or head of the list to keep time constant.
 DoublyLinked lists are similar to a Linked List as described above; however, each  node contains a pointer to
 the previous node.  This makes insertion at either end of the list a constant time of `O(1)`
 
+**<a name="bst"></a>Binary Tree / BST**
+
+A BST is a type of Binary Tree in which the nodes are arranged in a specific order to enable searching of the tree. 
+Each node/subnode on the left of the tree is less than the nodes of the right branch of the sub stree.  
+ 
+similar to a heap that is Min-Down. 
+
+A Binary tree is a tree structure in which each node may contain only two leafs, or 0 and 1 respectively.
+Binary Trees can be utilized to create huffman coding tables to greatly reduce the amount of space required
+to store arbitrary amounts of text.
+
 **<a name="trie"></a>Trie**
 
 A trie is a tree like data structure, in which the leafs for a given node fan out wide. 
