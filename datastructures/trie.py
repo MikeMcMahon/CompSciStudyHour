@@ -69,7 +69,8 @@ class Trie(object):
         suffix = key[key_idx]
         for leaf in children:
             if leaf.data == suffix:
-                # We're at the tail of the key and we have children
+                # we have encountered a leaf node that is a key we can't delete these
+                # this means our key shares a common branch
                 if leaf.is_key:
                     parent_key = True
 
