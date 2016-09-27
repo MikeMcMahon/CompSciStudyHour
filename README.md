@@ -90,8 +90,6 @@ A DFS strategy would find the key would find the key 'abd' in 3 recursions `A* -
 
 Where as a BFS strategy would find key 'abd' in 8 recursions `A* -> B -> X -> B* -> A -> Y -> C -> D*`
 
-
-
 ## Sorting
 These are just a few of many sorting algorithms - below you will find the algo and the space
 and time complexity as well as the average case and worst case scenario run complexities
