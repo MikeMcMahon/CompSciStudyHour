@@ -202,7 +202,7 @@ its place to be found within the tree.
 
 **Divide and Conquer**
 
-**Tortoise and the Hare**
+**Tortoise and Hare**
 
 Imagine you have a linked list, you are unaware of whether or not it is a circularly linked list or a 
 singly linked list with a null pointer at the end. 
@@ -225,14 +225,16 @@ vs.
 In the above example we could simply traverse the list and determine if the first one is acyclic; 
 however either of the last two examples we would never find the end as it is cyclic (or circular)
 
-One option would be to create a copy of the list so as to keep track of the list in memory; however
-this would require as much memory as it has taken to allocate the original list. 
+One option is to create a copy of the list so we can keep track of the visited nodes; however,
+this requires as much memory as it has taken to allocate the original list. 
 
-Thus we come to the tortois and the hare algorithm.  What if instead we used two pointers to keep track
-of our current and visited nodes on the list.  One pointer moving at one rate, and another moving at twice 
-the speed.  Consider two joggers running on a track, one running twice the speed.  In only one circuit of 
-the track the slower paced jogger will have been passed by the faster paced jogger.  
+Thus we come to the Tortoise and Hare algorithm.  What if instead we used two pointers to keep track
+of our progress through the list.  One pointer moving at a rate of `n` and another point moving at `n+2`.  
+This tracking is analogous with two joggers running on a track, one running a fixed paced faster 
+than the other. Eventually our faster paced jogger will lap the slower jogger.   
 
-By moving one pointer n elements at a time and another at two n elements at a time we will eventually come
+By moving one pointer `n` elements at a time and another at `n+2` elements at a time we will eventually come
 to a point in time in which the two pointers are equal OR the the faster of the two pointers will find a NULL
-node first.  
+node first.
+
+Thus we can determine whether or not a list is cyclic or acyclic. 
