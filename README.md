@@ -86,9 +86,9 @@ In a Trie data structure we would have the following structure
            c*   d* g*       z*
 ```
 
-A DFS strategy would find the key would find the key 'abd' in 4 recursions `A* -> B* -> C -> D*`.
+A DFS strategy would find the key would find the key 'abd' in 3 recursions `A* -> B* -> D*`.
 
-Where as a BFS strategy would find key 'abd' in 8 pass `A* -> B -> X -> B* -> A -> Y -> C -> D*`
+Where as a BFS strategy would find key 'abd' in 8 recursions `A* -> B -> X -> B* -> A -> Y -> C -> D*`
 
 
 
