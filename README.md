@@ -77,6 +77,8 @@ Consider the following keys
 In a Trie data structure we would have the following structure
 
 ```
+'*' denotes a key
+
                    _
                 /  |  \
                a*  b   x*
@@ -86,7 +88,7 @@ In a Trie data structure we would have the following structure
            c*   d* g*       z*
 ```
 
-A DFS strategy would find the key would find the key 'abd' in 3 recursions `A* -> B* -> D*`.
+A DFS strategy would locate the given search term 'abd' in 3 recursions `A* -> B* -> D*`.
 
 Where as a BFS strategy would find key 'abd' in 8 recursions `A* -> B -> X -> B* -> A -> Y -> C -> D*`
 
