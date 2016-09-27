@@ -196,3 +196,43 @@ would be located much higher in the tree and found with a BFS much faster.
 
 The point being, that it depends on the structure of the data and what you are searching for and 
 its place to be found within the tree. 
+
+
+## Algorithms in General
+
+**Divide and Conquer**
+
+**Tortoise and the Hare**
+
+Imagine you have a linked list, you are unaware of whether or not it is a circularly linked list or a 
+singly linked list with a null pointer at the end. 
+
+```a -> b -> c -> NULL```
+
+vs.
+
+```
+    a -> b -> c --
+    ^            |
+     \___________|
+     
+    a -> b -> c --
+         ^       |
+          \______|
+     
+```
+
+In the above example we could simply traverse the list and determine if the first one is acyclic; 
+however either of the last two examples we would never find the end as it is cyclic (or circular)
+
+One option would be to create a copy of the list so as to keep track of the list in memory; however
+this would require as much memory as it has taken to allocate the original list. 
+
+Thus we come to the tortois and the hare algorithm.  What if instead we used two pointers to keep track
+of our current and visited nodes on the list.  One pointer moving at one rate, and another moving at twice 
+the speed.  Consider two joggers running on a track, one running twice the speed.  In only one circuit of 
+the track the slower paced jogger will have been passed by the faster paced jogger.  
+
+By moving one pointer n elements at a time and another at two n elements at a time we will eventually come
+to a point in time in which the two pointers are equal OR the the faster of the two pointers will find a NULL
+node first.  
