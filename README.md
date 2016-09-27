@@ -11,7 +11,7 @@ written in python. These are solely for educational purposes.
 | [Array](#array) | `O(1)` | `O(n)` | `O(n)` | `O(n)` | 
 | [Linked List](#llist) | `O(n)` | `O(n)` | `O(1)` | `O(1)` |
 | [BST](#bst) | `O(log(n))` | `O(log(n))` | `O(log(n))` | `O(log(n))` |
-| [Heap](#heap) | `O(log n)` | `O(1)` | `O(log n)` | `O(n)` | `O(n)` |
+| [Heap](#heap) | `O(log n)` | `O(n)` | `O(1)` | `O(log n)` |
 | [Hash Table](#hash) | `N/A` | `O(1)` | `O(1)` | `O(1)` |
 | [Stack](#stack) | `O(1)` | `O(n)` | `O(1)` | `O(1)` |
 | [Queue](#queue) | `O(n)` | `O(n)` | `O(1)` | `O(1)` |
@@ -24,7 +24,7 @@ written in python. These are solely for educational purposes.
 | [Array](#array) | `O(1)` | `O(n)` | `O(n)` | `O(n)` | `O(n)` |
 | [Linked List](#llist) | `O(n)` | `O(n)` | `O(1)` | `O(1)` | `O(n)` |
 | [BST](#bst) | `O(n)` | `O(n)` | `O(n)` | `O(n)` | `O(n)` |
-| [Heap](#heap) | `O(log n)` | `O(1)` | `O(log n)` | `O(n)` | `O(n)` |
+| [Heap](#heap) | `O(log n)` | `O(n)` | `O(1)` | `O(log n)` | `O(n)` |
 | [Hash Table](#hash) | `N/A` | `O(n)` | `O(n)` | `O(n)` | `O(n)` |
 | [Stack](#stack) | `O(1)` | `O(n)` | `O(1)` | `O(1)` | `O(n)` |
 | [Queue](#queue) | `O(n)` | `O(n)` | `O(1)` | `O(1)` | `O(n)` |
@@ -59,6 +59,100 @@ similar to a heap that is Min-Down.
 A Binary tree is a tree structure in which each node may contain only two leafs, or 0 and 1 respectively.
 Binary Trees can be utilized to create huffman coding tables to greatly reduce the amount of space required
 to store arbitrary amounts of text.
+
+**<a name="heap"></a>Heap**
+
+A heap is a specialized tree-based data structure that satisfies the heap constraint which states. 
+
+> If A is a parent node of B then A is ordered with respect to B
+
+In terms of heaps we typically have MinHeaps and MaxHeaps, wherein the data is ordered with respect to whether
+or not the parent node is a smaller or larger. 
+
+To `heapify` a list such as [3, 2, 1, 5, 7, 9] into a max heap we would have `log n` number of operations
+utilizing a sift up strategy.  
+
+Quickly, sifting up vs. sifting down, sifting up places a newly inserted node at the bottom level of the tree
+then comparing the node to its parents node, determines if the node should be "sifted up." average time is `O(1)` 
+meaning that hte node does not require to be sifted.  Worst case is `O(log n)` in which we must check each branch 
+as we work our way up the tree, sifting the node up one level. 
+
+Sifting down is a slightly more costly endeavor having to a complexity of `O(n log n)` in the worst case, being that 
+there are more nodes to possibly check as we sift down a tree.  
+
+
+The operations to build our heap:
+
+```
+11, 2, 1, 5,10, 7, 9
+pop()
+
+11, 2, 1, 5,10, 7
+
+                      9
+                      
+pop()
+11, 2, 1, 5,10,
+
+                      9
+                     /
+                    7
+pop()
+11, 2, 1, 5,
+                     9
+                    / \
+                   7   10 - sift up
+                 
+                 
+                     10
+                    /  \
+                   7    9
+pop()
+11, 2, 1,                   
+
+                     10
+                    /  \
+                   7    9
+                  /
+                 5
+pop()
+11, 2,                   
+
+                      10
+                    /    \
+                   7      9
+                  / \
+                 5   1
+pop()
+11,
+
+                      10
+                    /    \
+                   7      9
+                  / \    /
+                 5   1  2
+                 
+pop()
+
+                      10
+                    /    \
+                   7      9
+                  / \    / \
+                 5   1  2   11 -- sift up
+                  
+                      10
+                    /    \
+                   7      11 -- sift up
+                  / \    / \
+                 5   1  2   9
+
+                      11 -- New root
+                    /    \
+                   7      10 
+                  / \    / \
+                 5   1  2   9 
+```
+
 
 **<a name="trie"></a>Trie**
 
