@@ -60,14 +60,13 @@ class Trie(object):
 
     def _delete(self, key, children: List[Leaf], parents: (List[Leaf], None), key_idx=0, parent_key=False):
         if not parents:
-            parents = list()
+            parents = [self.root]
 
         if key_idx >= len(key):
             return
 
         key_end = True if len(key) == key_idx + 1 else False
         suffix = key[key_idx]
-        tmp_idx = key_idx
         for leaf in children:
             if leaf.data == suffix:
                 # We're at the tail of the key and we have children
@@ -80,35 +79,30 @@ class Trie(object):
                         leaf.is_key = False
                     else:
                         # delete all nodes recursively up to the top of the first node that has multiple children
-                        stop = False
-                        while parents and not stop:
-                            p = parents.pop()
-                            # we have children, so walk back up the tree until we hit the first branch
-                            # Locate our branch and kill its children
-                            for i in range(len(p.children)):
-                                if p.children[i].data == key[tmp_idx]:
-                                    p.children.pop(i)  # children[i].children = []
-                                    stop = True  # Need to stop processing a removal at a branch
-                                    break
-                            tmp_idx -= 1
-
-                # We have reached the end of the key and there are no children
+                        self._clean_parents(key, key_idx, parents)
                 elif key_end and not leaf.children:
-                    stop = False
-                    while parents and not stop:
-                        p = parents.pop()
-                        # we have children, so walk back up the tree until we hit the first branch
-                        # Locate our branch and kill its children
-                        for i in range(len(p.children)):
-                            if p.children[i].data == key[tmp_idx]:
-                                p.children.pop(i) # children[i].children = []
-                                stop = True  # Need to stop processing a removal at a branch
-                                break
-                        tmp_idx -= 1
+                    # delete all nodes recursively up to the top of the first node that has multiple children
+                    self._clean_parents(key, key_idx, parents)
 
                 # Not at the key end so we need to keep traversing the tree down
                 parents.append(leaf)
                 self._delete(key, leaf.children, parents, key_idx + 1, key_end)
+
+    def _clean_parents(self, key, key_idx, parents):
+        stop = False
+        while parents and not stop:
+            p = parents.pop()
+
+            # Need to stop processing a removal at a branch
+            if len(p.children) > 1:
+                stop = True
+
+            # Locate our branch and kill its children
+            for i in range(len(p.children)):
+                if p.children[i].data == key[key_idx]:
+                    p.children.pop(i)
+                    break
+            key_idx -= 1
 
     def _find(self, key, children: List[Leaf]):
         if not key:
@@ -151,7 +145,7 @@ class Trie(object):
 
 
 def main():
-    keys = ['ba', 'bag', 'a', 'abc', 'abcd', 'abd']
+    keys = ['ba', 'bag', 'a', 'abc', 'abcd', 'abd', 'xyz']
     trie = Trie(keys)
     print(trie.includes_key('ba'))  # True
     print(trie.includes_key('b'))  # False
@@ -163,6 +157,7 @@ def main():
     trie.delete('abd')  # Should only remove the d
     trie.delete('a')    # should unmark a as a key
     trie.delete('ba')   # should remove the ba trie
+    trie.delete('xyz')  # Should remove the entire branch
     trie.delete('bag')  # should only remove the g
 
     print(trie)
