@@ -68,9 +68,29 @@ driven applications wherein you need to lookup data from a given set, this is du
 that the complexity for searching is related directly to the number of characters in the word
 being looked up. The worst case for insertion is n*m*c or `nodes * keySize * characterSetSize`  
 
-A depth-first strategy is implemented until the desired depth is reached.
- 
- 
+A depth-first strategy is implemented to locate lookup suffixes or entire keys. 
+
+Consider the following keys 
+
+```['a', 'abc', 'abd', 'x', 'xy', 'xyz', 'bag',]```
+
+In a Trie data structure we would have the following structure
+
+```
+                   _
+                /  |  \
+               a*  b   x*
+              /    |    \
+             b     a     y*
+            /  \   |      \
+           c*   d* g*       z*
+```
+
+A DFS strategy would find the key would find the key 'abd' in 4 recursions `A* -> B* -> C -> D*`.
+
+Where as a BFS strategy would find key 'abd' in 8 pass `A* -> B -> X -> B* -> A -> Y -> C -> D*`
+
+
 
 ## Sorting
 These are just a few of many sorting algorithms - below you will find the algo and the space
