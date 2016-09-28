@@ -29,7 +29,20 @@ written in python. These are solely for educational purposes.
 | [Stack](#stack) | `O(1)` | `O(n)` | `O(1)` | `O(1)` | `O(n)` |
 | [Queue](#queue) | `O(n)` | `O(n)` | `O(1)` | `O(1)` | `O(n)` |
 | [Trie](#trie) | `O(m)` | `O(m)` | `O(n*m)` | `O(m)` | `O(n+m)` |
-| [Graph](#graph) | `O()` | `O()` | `O()` | `O()` | `O(n)` |
+
+**[Graph](#graph)**
+
+___from [wikipedia](https://en.wikipedia.org/wiki/Graph_(abstract_data_type))___
+
+|    | Adjacency List | Adjency Matrix | Incidence Matrix |
+|:---|    :---:       |    :---:       |     :---:        |
+| Store Graph  | `O(V + E)` | `O(V<sup>2</sup>)` | `O(V * E)` |
+| Add Vertex  | `O(1)` | `O(V<sup>2</sup>)` | `O(V * E)` |
+| Add Edge  | `O(1)` | `O(1)` | `O(V * E)` |
+| Remove Vertex | `O(E)` | `O(V<sup>2</sup>)` | `O(V * E)` |
+| Remove Vertex | `O(E)` | `O(1)` | `O(V * E)` |
+| Query neighbors | `O(V)` | `O(1)` | `O(E)` |
+| Remarks | Slow to remove vertices and edges, because it needs to find all vertices or edges | slow to add or remove vertices, because matrix must be resized/copied | slow to add or remove vertices and edges, because matrix must be resized/copied |
 
 
 **<a name="array"></a>Array**
