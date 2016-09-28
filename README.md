@@ -199,6 +199,49 @@ A DFS strategy would locate the given search term 'abd' in 3 recursions `A* -> B
 
 Where as a BFS strategy would find key 'abd' in 8 recursions `A* -> B -> X -> B* -> A -> Y -> C -> D*`
 
+**<a name="graph"></a>Graph**
+
+A graph data structure is similar to a tree or cluster of tress, a graph is represented by edges connected vertices, though 
+not all vertices are connected by edges. 
+
+A `directed` graph is simply a graph whose vertices may only be traversed in a single direction or bi-directionally, whereas an undirected graph
+does not make this distinction and edges may be traversed in any direction.  
+
+One use for a graph is to represent a site navigation layout.  With each node representing a page and the edge representing the flow
+of traffic between each page.  In terms of a single-page application a directed graph can help identify workflows on the site in which
+backwards navigation may not be possible (e.g. a workflow which includes actions which cannot be reversed until the entire workflow has
+taken place).  
+
+A simple data structure to represent a graph is called an adjacency list it is represented as such
+
+```
+A -> B
+A -> C
+B -> D
+E -> G
+```
+
+This would generate the following adjacency list
+```
+A -> {B, C}
+B -> {A, D}
+C -> {B}
+E -> {G}
+```
+
+This translates to the following graph
+
+```
+     A ---- B---- D
+     |     /
+     |   /
+     | / 
+     C     E ---- G
+```
+
+A DFS search can be utilized to search the graph to determine the shortest paths between any two nodes. 
+Additionally the diameter of a graph is determined the distance of the two furthest nodes of the graph. 
+
 ## Sorting
 These are just a few of many sorting algorithms - below you will find the algo and the space
 and time complexity as well as the average case and worst case scenario run complexities
