@@ -31,6 +31,9 @@ class UGraph(object):
                 self.graph[x] = set()
                 self.graph[x].add(y)
 
+    def get_vertices(self):
+        return sorted(self.graph.keys())
+
     def remove_vertex(self, vertex: str):
         self.graph.pop(vertex, None)
         for x in self.graph.keys():
@@ -82,11 +85,14 @@ def main():
     graph.add_edge('e', 'g')
 
     print()
-    for r in graph.generate_incidence():
-        incidence = ""
+    incidence = graph.generate_incidence()
+    vertices = graph.get_vertices()
+    for r in incidence:
+        incidence_row = vertices[0] + "| "
+        vertices = vertices[1:]
         for v in r:
-            incidence += "1 " if v else "0 "
-        print(incidence)
+            incidence_row += "1 " if v else "0 "
+        print(incidence_row)
 
     print()
 
@@ -105,8 +111,17 @@ def main():
     print('B has {} neighbors.'.format(graph.neighbors('b')))
     print('G has {} neighbors.'.format(graph.neighbors('g')))
 
-    return
+    print()
+    incidence = graph.generate_incidence()
+    vertices = graph.get_vertices()
+    for r in incidence:
+        incidence_row = vertices[0] + "| "
+        vertices = vertices[1:]
+        for v in r:
+            incidence_row += "1 " if v else "0 "
+        print(incidence_row)
 
+    print()
 
 if __name__ == "__main__":
     main()
