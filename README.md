@@ -166,6 +166,37 @@ pop()
                  5   1  2   9 
 ```
 
+**<a name="hash"></a>Hash**
+
+Hash table, as the name implies, is a table of hashes that uniquely identify a value.  Given a key a particular
+hash is stored into the pre-allocated table at a provided index.  
+
+Hash tables provide constant time lookups and storage in the average case `O(1)`. With a worst case complexity 
+of `O(n)` when multiple keys collide and linear probing must be performed. 
+
+```
+'a' -> hash('a') -> 2 ---          [0]
+                        |          [1]
+                        ----->     [2] -> stores the value for the provides key 'a'
+                                   [3]
+                                   [n]... 
+```
+
+When there is a collision, as was stated earlier, linear probing must be performed.  Linear probing proceeds 
+through the allocated table checking for the next empty cell, this is where the worst case scenario of `O(n)`
+comes into play.  Due to the fact that the table is pre-allocated, it is especially costly when the number of elements
+stored into the table exceeds the table size, as the table must be re-sized and all keys re-hashed into the table. 
+
+
+**<a name="stack"></a>Stack**
+
+A stack, as the name implies, is a "stack" of data with a Last In First Out policy.  Stacks are the backbone of DFS
+algorithms.  Values are placed onto the top of the stack and removed from the bottom as the data is processed.
+
+**<a name="queue"></a>Queue**
+
+Analogous to a stack, data is placed into a queue and removed single file; however, queues use the First In First Out `FIFO`
+methodology.  Queues work great with a BFS strategy given the nature of how they store and retrieve data. 
 
 **<a name="trie"></a>Trie**
 
