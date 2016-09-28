@@ -166,7 +166,7 @@ pop()
                  5   1  2   9 
 ```
 
-**<a name="hash"></a>Hash**
+**<a name="hash"></a>Hash Table**
 
 Hash table, as the name implies, is a table of hashes that uniquely identify a value.  Given a key a particular
 hash is stored into the pre-allocated table at a provided index.  
