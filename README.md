@@ -15,8 +15,7 @@ written in python. These are solely for educational purposes.
 | [Hash Table](#hash) | `N/A` | `O(1)` | `O(1)` | `O(1)` |
 | [Stack](#stack) | `O(1)` | `O(n)` | `O(1)` | `O(1)` |
 | [Queue](#queue) | `O(n)` | `O(n)` | `O(1)` | `O(1)` |
-| [Trie](#trie) | `O(m)` | `O(m)` | `O(m)` | `O()` |
-| [Graph](#graph) | `O()` | `O()` | `O()` | `O()` |
+| [Trie](#trie) | `O(m)` | `O(m)` | `O(m)` | `O(n+m)` |
 
 #### Worst Case Scenario
 | Data Structure | Access | Search | Insertion | Deletion | Space |
