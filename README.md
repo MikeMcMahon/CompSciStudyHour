@@ -327,8 +327,17 @@ are stored and only those of lesser or greater stored into separate buckets. Thi
 
 **<a name="bubble"></a>Bubble Sort**
 
+The bubble sort is the simplest of all sorting mechanisms on the list.  Checking each value with its neighbor, large
+values are quickly bubbled to the top of the list while smaller values are shifted to the rear of the list. However, 
+using this means to sort in the worst case carries an n<sup>2</sup> time complexity. For a list is completely reversed 
+it will take a factor of two to the number of elements in passes to completely sort.  It is a simple algo though... 
+
 **<a name="merge"></a>Merge Sort**
 
+Utilizing the divide and conquer methodology, the Merge Sort divides the list in half and continuousely breaks the list
+down bit by bit until the items are split into individual buckets. While the list is being split, each sublist is being 
+sorted via a merge function. maintaining a `O(n log n)` time.  Merge sorts are considered a great general purpose sorting
+algorithm, working especially well with linked lists. 
 
 ## Searching
 
