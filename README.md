@@ -177,7 +177,7 @@ of `O(n)` when multiple keys collide and linear probing must be performed.
 ```
 'a' -> hash('a') -> 2 ---          [0]
                         |          [1]
-                        ----->     [2] -> stores the value for the provides key 'a'
+                        ----->     [2] -> stores the value for the provided key 'a'
                                    [3]
                                    [n]... 
 ```
@@ -187,6 +187,13 @@ through the allocated table checking for the next empty cell, this is where the 
 comes into play.  Due to the fact that the table is pre-allocated, it is especially costly when the number of elements
 stored into the table exceeds the table size, as the table must be re-sized and all keys re-hashed into the table. 
 
+```
+'c' -> hash('c') -> 2 ---          [0]
+                    |   |          [1]
+      collision-----    |          [2] -> stores the value for the provided key 'a'
+                        |----->    [3] -> linear probing stores the key/value into the third slot instead
+                                   [n]... 
+```
 
 **<a name="stack"></a>Stack**
 
