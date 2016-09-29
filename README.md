@@ -398,6 +398,18 @@ its place to be found within the tree.
 
 **Divide and Conquer**
 
+Divide and conquer is the idea of splitting a problem into two or more sub problems via recursion and continuing to  do
+so until the problem is simple enough to solve.  The sub-solutions are then recombined to create a solution that answers
+the entire question.  
+
+For example, the Merge Sort algorithm utilized the divide and conquer methodology, of continuously breaking down the subset
+of data until it has been completely reduced to 1 or two elements being compared.  Each sub set is then sorted and merged together
+and via the magic of recursion each walk up the stack handles merging a slightly smaller and smaller set of the data until
+everything is sorted and merged at the end.  
+
+It is notable that most Divide & Conquer algorithms are written recursively, which may raise concern for memory or stack
+allocation causing stack overflows. 
+
 **Tortoise and Hare**
 
 Imagine you have a linked list, you are unaware of whether or not it is a circularly linked list or a 
